@@ -1,96 +1,80 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* CAN Design System - Coastal Professional Theme */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 210 24% 16%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 24% 16%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 24% 16%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Coastal Blue Primary */
+    --primary: 210 100% 40%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Seafoam Accent */
+    --secondary: 174 44% 51%;
+    --secondary-foreground: 210 24% 16%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 210 16% 46%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 174 44% 51%;
+    --accent-foreground: 210 24% 16%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 210 100% 40%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* CAN Specific Colors */
+    --ocean-deep: 210 100% 25%;
+    --ocean-primary: 210 100% 40%;
+    --ocean-light: 210 100% 60%;
+    --seafoam: 174 44% 51%;
+    --seafoam-light: 174 44% 71%;
+    --sand: 45 29% 88%;
+    --coral: 14 91% 65%;
+    --success: 142 76% 36%;
+    --warning: 48 96% 53%;
+    --pending: 210 100% 60%;
+    --urgent: 14 91% 65%;
+    --critical: 0 84% 60%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Status Colors */
+    --status-submitted: 210 100% 60%;
+    --status-review: 48 96% 53%;
+    --status-verified: 142 76% 36%;
+    --status-contract: 174 44% 51%;
+    --status-interview: 261 83% 58%;
+    --status-active: 142 76% 36%;
+    --status-deployed: 210 100% 25%;
+    --status-rejected: 0 84% 60%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 210 24% 10%;
+    --foreground: 0 0% 98%;
+    --card: 210 24% 10%;
+    --card-foreground: 0 0% 98%;
+    --primary: 210 100% 60%;
+    --secondary: 174 44% 61%;
+    --muted: 210 40% 15%;
+    --accent: 174 44% 61%;
+    --border: 210 40% 20%;
+    --input: 210 40% 20%;
   }
 }
 
@@ -100,6 +84,145 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/20 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/40;
+  }
+}
+
+@layer components {
+  /* Status Badge Variants */
+  .status-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .status-submitted {
+    @apply bg-blue-100 text-blue-800 border border-blue-200;
+  }
+
+  .status-review {
+    @apply bg-yellow-100 text-yellow-800 border border-yellow-200;
+  }
+
+  .status-verified {
+    @apply bg-green-100 text-green-800 border border-green-200;
+  }
+
+  .status-contract {
+    @apply bg-teal-100 text-teal-800 border border-teal-200;
+  }
+
+  .status-interview {
+    @apply bg-purple-100 text-purple-800 border border-purple-200;
+  }
+
+  .status-active {
+    @apply bg-emerald-100 text-emerald-800 border border-emerald-200;
+  }
+
+  .status-deployed {
+    @apply bg-blue-900 text-blue-100 border border-blue-800;
+  }
+
+  .status-rejected {
+    @apply bg-red-100 text-red-800 border border-red-200;
+  }
+
+  /* Alert Variants */
+  .alert-warning {
+    @apply border-yellow-200 bg-yellow-50 text-yellow-800;
+  }
+
+  .alert-urgent {
+    @apply border-orange-200 bg-orange-50 text-orange-800;
+  }
+
+  .alert-critical {
+    @apply border-red-200 bg-red-50 text-red-800;
+  }
+
+  /* Pipeline Card */
+  .pipeline-card {
+    @apply bg-white rounded-lg shadow-sm border border-gray-200 p-4 hover:shadow-md transition-shadow duration-200;
+  }
+
+  .pipeline-card:hover {
+    @apply border-primary/20 shadow-lg;
+  }
+
+  /* Ocean Gradient */
+  .ocean-gradient {
+    background: linear-gradient(135deg, hsl(var(--ocean-deep)) 0%, hsl(var(--ocean-primary)) 50%, hsl(var(--ocean-light)) 100%);
+  }
+
+  /* Coastal Gradient */
+  .coastal-gradient {
+    background: linear-gradient(135deg, hsl(var(--seafoam)) 0%, hsl(var(--seafoam-light)) 100%);
+  }
+}
+
+@layer utilities {
+  .text-ocean-deep { color: hsl(var(--ocean-deep)); }
+  .text-ocean-primary { color: hsl(var(--ocean-primary)); }
+  .text-ocean-light { color: hsl(var(--ocean-light)); }
+  .text-seafoam { color: hsl(var(--seafoam)); }
+  .text-coral { color: hsl(var(--coral)); }
+  
+  .bg-ocean-deep { background-color: hsl(var(--ocean-deep)); }
+  .bg-ocean-primary { background-color: hsl(var(--ocean-primary)); }
+  .bg-seafoam { background-color: hsl(var(--seafoam)); }
+  .bg-sand { background-color: hsl(var(--sand)); }
+  
+  .border-ocean-primary { border-color: hsl(var(--ocean-primary)); }
+  .border-seafoam { border-color: hsl(var(--seafoam)); }
+
+  /* Animation utilities */
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  .animate-pulse-gentle {
+    animation: pulseGentle 2s ease-in-out infinite;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulseGentle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
 }
